@@ -1,2 +1,2 @@
-# react_settings_webpack
+# React & Webpack
 React development environment with webpack
