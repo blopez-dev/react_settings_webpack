@@ -1,5 +1,5 @@
 {
-  "name": "react_settings_webpack",
+  "name": "@blopez-dev/react_settings_webpack",
   "version": "1.0.0",
   "description": "React development environment with webpack",
   "main": "index.js",
