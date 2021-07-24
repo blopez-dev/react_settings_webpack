@@ -1,17 +1,22 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const Dotenv = require('dotenv-webpack');
 
 const htmlPlugin = new HtmlWebpackPlugin({
   template: './src/index.html',
 });
 
+const isDevelopment = process.env.NODE_ENV === 'development';
+
+console.log(isDevelopment)
+
+const output = !isDevelopment
+  ? { clean: true, filename: 'index.js', publicPath: '/', libraryTarget: 'commonjs2' }
+  : { clean: true, };
+
 module.exports = {
-  mode: 'development',
+  mode: process.env.NODE_ENV,
   entry: './src/index.js',
-  output: {
-    clean: true,
-  },
+  output,
   module: {
     rules: [
       {
@@ -19,18 +24,13 @@ module.exports = {
         use: "babel-loader",
       },
       {
-        test: /\.css$/i,
-        use: [MiniCssExtractPlugin.loader, "css-loader"],
-      },
-      {
         test: /\.jpeg$/i,
         type: 'asset/resource',
       },
     ],
   },
-  plugins: [
+  plugins: !isDevelopment ? [new Dotenv()] : [
     htmlPlugin,
-    new MiniCssExtractPlugin(),
     new Dotenv(),
   ],
 }

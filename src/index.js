@@ -1,14 +1,11 @@
 import ReactDOM from 'react-dom';
-import User from './components/user';
-import Title from './components/title';
-import './index.css';
+import App from './app';
 
-const Application = () => (
-  <main>
-      <Title />
-      <User />
-  </main>
-);
+const isDevelopment = process.env.NODE_ENV === 'development';
 
-const body = document.querySelector('#root');
-ReactDOM.render(<Application />, body);
+if(isDevelopment) {
+  const body = document.querySelector('#root');
+  ReactDOM.render(<App />, body);
+}
+
+export default App;
