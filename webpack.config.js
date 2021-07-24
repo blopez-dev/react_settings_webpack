@@ -10,7 +10,7 @@ const isDevelopment = process.env.NODE_ENV === 'development';
 console.log(isDevelopment)
 
 const output = !isDevelopment
-  ? { clean: true, filename: 'index.js', publicPath: '/', libraryTarget: 'commonjs2' }
+  ? { clean: true, filename: 'index.js', publicPath: '/', libraryTarget: 'umd' }
   : { clean: true, };
 
 module.exports = {

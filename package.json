@@ -1,6 +1,6 @@
 {
   "name": "@blopez-dev/react_settings_webpack",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "React development environment with webpack",
   "main": "./dist/index.js",
   "scripts": {
