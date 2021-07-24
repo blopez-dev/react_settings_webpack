@@ -34,4 +34,8 @@ module.exports = {
     htmlPlugin,
     new Dotenv(),
   ],
+  externals: {
+    react: 'react',
+    'styled-components': 'styled-components',
+  },
 }
