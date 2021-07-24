@@ -14,6 +14,7 @@ const output = !isDevelopment
   : { clean: true, };
 
 module.exports = {
+  target: 'node',
   mode: process.env.NODE_ENV,
   entry: './src/index.js',
   output,
